@@ -52,6 +52,10 @@ namespace Mirror.Discovery
             if (GUILayout.Button("Start Host"))
             {
                 discoveredServers.Clear();
+
+                //System.Guid matchID = System.Guid.NewGuid();
+                //GetComponent<NetworkMatchChecker>().matchId = matchID;
+
                 NetworkManager.singleton.StartHost();
                 networkDiscovery.AdvertiseServer();
             }
