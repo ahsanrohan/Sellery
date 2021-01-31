@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8250426412440211374}
   - component: {fileID: 720795669691634059}
   - component: {fileID: 6572833083714882889}
-  - component: {fileID: 9222320198610218754}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -155,20 +154,3 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   speed: 5
---- !u!114 &9222320198610218754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4972575428818064213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79874ac94d5b1314788ecf0e86bd23fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  showRoomGUI: 1
-  readyToBegin: 1
-  index: 0
