@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "ce0717174a365a22017e",
     "m_SelectedPackage": {
-        "deviceId": "ce0717174a365a22017e",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 15746,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,43 +11,37 @@
         {
             "deviceId": "ce0717174a365a22017e",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 7249,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 9880,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 23383,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 24938,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "ce0717174a365a22017e",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 7914,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "ce0717174a365a22017e",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 14461,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "ce0717174a365a22017e",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 15746,
+            "exited": true
+        },
+        {
+            "deviceId": "ce0717174a365a22017e",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 28335,
+            "exited": true
+        },
+        {
+            "deviceId": "ce0717174a365a22017e",
+            "name": "com.sec.android.app.launcher",
+            "processId": 13720,
             "exited": false
         }
     ],
