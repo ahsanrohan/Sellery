@@ -61,9 +61,8 @@ public class Twitter : MonoBehaviour
     }
 
     Task<Tweet[]> tweetsRequest;
-    public async void newTweets(String name)
+    public void newTweets(String name)
     {
-        
         tweetsRequest = TwitterRestApiHelper.GetLatestTweetsFromUserByScreenName(name, this.TwitterApiAccessToken.access_token);
     }
 
@@ -107,7 +106,6 @@ public class Twitter : MonoBehaviour
         if (go.GetComponentInChildren<Text>().text == nameAnswer)
             nextQuestion(getCatarray());
 
-
     }
 
 
@@ -115,7 +113,7 @@ public class Twitter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if(tweetsRequest.IsCompleted)
+        if(tweetsRequest != null && tweetsRequest.IsCompleted)
         {
             tweets = tweetsRequest.Result;
 
