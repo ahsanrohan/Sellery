@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58M23PQLXA",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 22903,
+        "processId": 21821,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -51,60 +51,6 @@
             "exited": false
         },
         {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 22473,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 23086,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 24133,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 5858,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 10377,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 14206,
-            "exited": false
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 28239,
-            "exited": true
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 29522,
-            "exited": true
-        },
-        {
-            "deviceId": "ce0717174a365a22017e",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 30028,
-            "exited": false
-        },
-        {
             "deviceId": "R58M23PQLXA",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 19595,
@@ -114,12 +60,6 @@
             "deviceId": "R58M23PQLXA",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 21821,
-            "exited": false
-        },
-        {
-            "deviceId": "R58M23PQLXA",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 22903,
             "exited": false
         }
     ],

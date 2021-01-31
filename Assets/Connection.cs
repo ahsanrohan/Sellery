@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.Net.Sockets;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Net;
 using System.IO;
@@ -15,12 +16,18 @@ public class Connection : MonoBehaviour
 {
     public Text debug;
     static TcpListener listener;
+    public Text joinID;
+
     public void attemptConnect()
     {
-
+        string[] ipBroken = debug.text.Split('.');
+        
+        ipBroken[3] = joinID.text;
+        string ipTest = string.Join(".", ipBroken);
+        Debug.Log(ipTest);
         try
         {
-            TcpClient client = new TcpClient("192.168.0.173", 7777);
+            TcpClient client = new TcpClient(ipTest, 7777);
 
             Byte[] data = System.Text.Encoding.ASCII.GetBytes("ThisIsATest");
 
@@ -34,7 +41,7 @@ public class Connection : MonoBehaviour
 
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            debug.text = responseData;
+            //debug.text = responseData;
             Debug.Log(responseData);
 
 
@@ -47,12 +54,14 @@ public class Connection : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log(e.ToString());
+            //Debug.Log(e.ToString());
         }
+   
     }
     public void Connect()
     {
-        Debug.Log("hi");
+        //Debug.Log("hi");
+        //GetLocalIPAddress();
         ThreadStart childref = new ThreadStart(attemptConnect);
         Thread childThread = new Thread(childref);
         childThread.Start();
@@ -61,7 +70,8 @@ public class Connection : MonoBehaviour
     public void CreateServer()
     {
         listener = new TcpListener(7777);
-        Debug.Log("newServer");
+        GetLocalIPAddress();
+        //Debug.Log("newServer");
         listener.Start();
         for (int i = 0; i < 2; i++)
         {
@@ -77,7 +87,7 @@ public class Connection : MonoBehaviour
             Debug.Log("newClient");
             Socket soc = listener.AcceptSocket();
             Debug.Log("Connection accepted.");
-            debug.text = "connected";
+            //debug.text = "connected";
             try
             {
                 Stream s = new NetworkStream(soc);
@@ -104,5 +114,19 @@ public class Connection : MonoBehaviour
         }
     }
 
+    public void GetLocalIPAddress()
+    {
+        var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+        foreach (var ip in host.AddressList)
+        {
+            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                debug.text = ip.ToString();
+                //return ip.ToString();
+            }
+        }
+
+        //throw new System.Exception("No network adapters with an IPv4 address in the system!");
+    }
 }
 
