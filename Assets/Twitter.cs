@@ -41,7 +41,7 @@ public class Twitter : MonoBehaviour
     void Start()
     {
         TwitterApiAccessToken = WebHelper.GetTwitterApiAccessToken(TwitterApiConsumerKey, TwitterApiConsumerSecret);
-        random = new System.Random();
+        random = new System.Random(DateTime.Now.Millisecond);
         nextQuestion(getCatarray());
 
 
@@ -95,6 +95,8 @@ public class Twitter : MonoBehaviour
             answers[w] = answers[z];
             answers[z] = temp;
         }
+
+
 
     }
     
