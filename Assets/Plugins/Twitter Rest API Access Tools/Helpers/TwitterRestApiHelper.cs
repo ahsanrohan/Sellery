@@ -102,7 +102,7 @@ namespace Web.Twitter.API
         }
 
         //https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
-        public async static Task<Tweet[]> GetLatestTweetsFromUserByScreenName(string screenName, string accessToken, int maximumTweetsToGet = 5, bool includeRetweets = false)
+        public async static Task<Tweet[]> GetLatestTweetsFromUserByScreenName(string screenName, string accessToken, int maximumTweetsToGet = 25, bool includeRetweets = false)
         {
             string url = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=" + screenName + "&count=" + maximumTweetsToGet + "&include_rts=" + includeRetweets;
             string webResponse = await WebHelper.HttpRequestAsync(url, accessToken);
