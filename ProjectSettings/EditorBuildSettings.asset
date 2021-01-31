@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/MainGameScene.unity
     guid: 0649f4d493bbc5b428a04b1257155df6
   - enabled: 1
+    path: Assets/JoinGameScene.unity
+    guid: f492ae99b6fbae14b81bc3fff00b76e9
+  - enabled: 1
     path: Assets/StartScreen.unity
     guid: 008dc0790e038ad499a3575b7850d202
   - enabled: 1
