@@ -866,7 +866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a643f2718ae5db43b22cfc0ba2abb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 1310987556}
+  debugServer: {fileID: 1310987556}
+  joinID: {fileID: 622381051}
 --- !u!4 &1030776238
 Transform:
   m_ObjectHideFlags: 0

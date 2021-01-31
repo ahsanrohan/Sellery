@@ -14,14 +14,15 @@ using System.Configuration;
 
 public class Connection : MonoBehaviour
 {
-    public Text debug;
+    public Text debugServer;
+    private string debugClient;
     static TcpListener listener;
     public Text joinID;
 
     public void attemptConnect()
     {
-        string[] ipBroken = debug.text.Split('.');
-        
+        string[] ipBroken = debugClient.Split('.');
+        Debug.Log(ipBroken);
         ipBroken[3] = joinID.text;
         string ipTest = string.Join(".", ipBroken);
         Debug.Log(ipTest);
@@ -41,8 +42,8 @@ public class Connection : MonoBehaviour
 
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            //debug.text = responseData;
-            Debug.Log(responseData);
+            debugServer.text = responseData;
+            Debug.Log(debugServer.text);
 
 
             //byte[] bytes = new byte[1024];
@@ -61,7 +62,7 @@ public class Connection : MonoBehaviour
     public void Connect()
     {
         //Debug.Log("hi");
-        //GetLocalIPAddress();
+        debugClient = GetLocalIPAddress();
         ThreadStart childref = new ThreadStart(attemptConnect);
         Thread childThread = new Thread(childref);
         childThread.Start();
@@ -70,8 +71,8 @@ public class Connection : MonoBehaviour
     public void CreateServer()
     {
         listener = new TcpListener(7777);
-        GetLocalIPAddress();
-        //Debug.Log("newServer");
+        debugServer.text = GetLocalIPAddress();
+        Debug.Log(debugServer.text);
         listener.Start();
         for (int i = 0; i < 2; i++)
         {
@@ -87,7 +88,7 @@ public class Connection : MonoBehaviour
             Debug.Log("newClient");
             Socket soc = listener.AcceptSocket();
             Debug.Log("Connection accepted.");
-            //debug.text = "connected";
+            debugServer.text = "connected";
             try
             {
                 Stream s = new NetworkStream(soc);
@@ -114,19 +115,20 @@ public class Connection : MonoBehaviour
         }
     }
 
-    public void GetLocalIPAddress()
+    public string GetLocalIPAddress()
     {
         var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
         foreach (var ip in host.AddressList)
         {
             if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
             {
-                debug.text = ip.ToString();
-                //return ip.ToString();
+                //test = ip.ToString();
+                //Debug.Log(test);
+                return ip.ToString();
             }
         }
 
-        //throw new System.Exception("No network adapters with an IPv4 address in the system!");
+        throw new System.Exception("No network adapters with an IPv4 address in the system!");
     }
 }
 
