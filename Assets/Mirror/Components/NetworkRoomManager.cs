@@ -626,12 +626,17 @@ namespace Mirror
         /// <summary>
         /// This is a hook to allow custom behaviour when the game client enters the room.
         /// </summary>
-        public virtual void OnRoomClientEnter() { }
+        public virtual void OnRoomClientEnter() { 
+            //while(true)
+            //{
+            //
+            //}
+        }
 
         /// <summary>
         /// This is a hook to allow custom behaviour when the game client exits the room.
         /// </summary>
-        public virtual void OnRoomClientExit() { }
+        public virtual void OnRoomClientExit() { Debug.Log("Fucker"); }
 
         /// <summary>
         /// This is called on the client when it connects to server.
