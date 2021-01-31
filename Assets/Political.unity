@@ -872,11 +872,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TwitterApiConsumerKey: d4zjI3HqiwBGX1Eru3pSls29L
   TwitterApiConsumerSecret: 8BPYa2unQM6GNw5VyQJv1DGSVp0gKYvgUY2TMZK3alC6c9CUrY
-  tweet_text: {fileID: 0}
-  a1: {fileID: 0}
-  a2: {fileID: 0}
-  a3: {fileID: 0}
-  a4: {fileID: 0}
+  tweet_text: {fileID: 567773353}
+  a1: {fileID: 461690952}
+  a2: {fileID: 1905322390}
+  a3: {fileID: 1372072010}
+  a4: {fileID: 167345351}
   TwitterApiAccessToken:
     token_type: 
     access_token: PQUmYlIaCMS63BGgSp9PNIQdOOPTMhUh7k2xUHBtdMwrv
