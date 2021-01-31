@@ -88,6 +88,10 @@ namespace Mirror.Discovery
         void Connect(ServerResponse info)
         {
             NetworkManager.singleton.StartClient(info.uri);
+            while(true)
+            {
+
+            }
         }
 
         public void OnDiscoveredServer(ServerResponse info)

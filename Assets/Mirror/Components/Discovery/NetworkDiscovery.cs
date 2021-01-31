@@ -105,6 +105,7 @@ namespace Mirror.Discovery
                 Host = response.EndPoint.Address.ToString()
             };
             response.uri = realUri.Uri;
+            //Debug.Log()
 
             OnServerFound.Invoke(response);
         }
