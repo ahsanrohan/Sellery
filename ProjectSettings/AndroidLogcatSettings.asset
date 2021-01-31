@@ -1,10 +1,10 @@
 {
-    "m_SelectedDeviceId": "ce0717174a365a22017e",
+    "m_SelectedDeviceId": "R58M23PQLXA",
     "m_SelectedPackage": {
-        "deviceId": "ce0717174a365a22017e",
+        "deviceId": "R58M23PQLXA",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 29522,
-        "exited": true
+        "processId": 22903,
+        "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
@@ -99,6 +99,12 @@
             "exited": true
         },
         {
+            "deviceId": "ce0717174a365a22017e",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 30028,
+            "exited": false
+        },
+        {
             "deviceId": "R58M23PQLXA",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 19595,
@@ -108,6 +114,12 @@
             "deviceId": "R58M23PQLXA",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 21821,
+            "exited": false
+        },
+        {
+            "deviceId": "R58M23PQLXA",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 22903,
             "exited": false
         }
     ],
