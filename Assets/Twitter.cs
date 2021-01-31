@@ -57,7 +57,7 @@ public class Twitter : MonoBehaviour
                 return null;
         }
     }
-    public void newTweets(String name)
+    public async void newTweets(String name)
     {
         tweets = await TwitterRestApiHelper.GetLatestTweetsFromUserByScreenName(name, this.TwitterApiAccessToken.access_token);
     }
@@ -66,6 +66,7 @@ public class Twitter : MonoBehaviour
     {
         int j = random.Next(getCatarray().Length-1);
         answer = j;
+
         nameAnswer = getCatarray()[j];
 
         answers[0] = j;
