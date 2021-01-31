@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using Web.Helpers;
 using Web.Twitter.API;
@@ -28,7 +30,7 @@ public class Twitter : MonoBehaviour
     int tweet_num;
     string nameAnswer;
 
-    int catigory = 0;
+    int catigory = 1;
 
     System.Random random;
     // Start is called before the first frame update
@@ -57,9 +59,11 @@ public class Twitter : MonoBehaviour
                 return null;
         }
     }
-    public async void newTweets(String name)
+
+    Task<Tweet[]> tweetsRequest;
+    public void newTweets(String name)
     {
-        tweets = await TwitterRestApiHelper.GetLatestTweetsFromUserByScreenName(name, this.TwitterApiAccessToken.access_token);
+        tweetsRequest = TwitterRestApiHelper.GetLatestTweetsFromUserByScreenName(name, this.TwitterApiAccessToken.access_token);
     }
 
     void nextQuestion(String[] names)
@@ -84,9 +88,14 @@ public class Twitter : MonoBehaviour
 
         newTweets(getCatarray()[answer]);
 
+        for (int w = 0; w < answers.Length - 1; w++)
+        {
+            int z = random.Next(w, answers.Length);
+            int temp = answers[w];
+            answers[w] = answers[z];
+            answers[z] = temp;
+        }
 
-        
-        tweet_num = random.Next(tweets.Length - 1);
     }
     
     public void checkButtonAnswer()
@@ -97,20 +106,29 @@ public class Twitter : MonoBehaviour
         if (go.GetComponentInChildren<Text>().text == nameAnswer)
             nextQuestion(getCatarray());
 
-
     }
+
+
 
     // Update is called once per frame
     void Update()
     {   
-        if(tweets != null)
+        if(tweetsRequest != null && tweetsRequest.IsCompleted)
         {
+            tweets = tweetsRequest.Result;
+
+            while(tweet_num >= tweets.Length)
+            {
+                tweet_num = random.Next(tweets.Length - 1);
+            }
+
             tweet_text.text = tweets[tweet_num].text;
 
             a1.GetComponentInChildren<Text>().text = getCatarray()[answers[0]];
             a2.GetComponentInChildren<Text>().text = getCatarray()[answers[1]];
             a3.GetComponentInChildren<Text>().text = getCatarray()[answers[2]];
             a4.GetComponentInChildren<Text>().text = getCatarray()[answers[3]];
+
         }
     }
 }
