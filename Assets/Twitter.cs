@@ -96,7 +96,7 @@ public class Twitter : MonoBehaviour
             answers[z] = temp;
         }
 
-
+        tweet_num = random.Next(tweets.Length - 1);
 
     }
     
